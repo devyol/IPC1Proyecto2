@@ -150,10 +150,10 @@ def registrarJuego():
 def getJuegos():
     return Juego.getJuegos()
 
-@app.route('/getJuego',methods=['POST'])
-def getJuego():
-    idreq = request.json['id']
-    return Juego.getJuego(int(idreq))
+@app.route('/getJuego/<id>',methods=['GET'])
+def getJuego(id):
+    #idreq = request.json['id']
+    return Juego.getJuego(int(id))
 
 db.init_app(app)
 if __name__ == '__main__':
