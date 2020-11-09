@@ -155,8 +155,8 @@ def getJuego():
     idreq = request.json['id']
     return Juego.getJuego(int(idreq))
 
+db.init_app(app)
 if __name__ == '__main__':
-    db.init_app(app)
     with app.app_context():
         db.create_all()
     app.run()
